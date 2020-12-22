@@ -1,0 +1,18 @@
+.user__list-item {
+  padding: 20px 40px;
+  background: #fff;
+  display: flex;
+  justify-items: flex-end;
+  margin: 20px 0 40px 0;
+}
+
+.user__list-icon {
+  width: 120px;
+  height: 120px;
+}
+
+.user-menu__item-text {
+  line-height: 120px;
+  margin-left: 20px;
+  font-size: 24px;
+}
