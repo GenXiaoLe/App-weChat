@@ -1,18 +1,59 @@
 .user__list-item {
-  padding: 20px 40px;
+  padding: 10px 40px;
   background: #fff;
   display: flex;
-  justify-items: flex-end;
+  justify-content: flex-start;
   margin: 20px 0 40px 0;
+  position: relative;
+}
+
+.user__login-item {
+  padding: 20px 40px;
 }
 
 .user__list-icon {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
 }
 
 .user-menu__item-text {
   line-height: 120px;
+  margin-left: 40px;
+  font-size: 32px;
+}
+
+.user-menu__item-icon {
+  line-height: 120px;
   margin-left: 20px;
+  font-size: 60px;
+  position: absolute;
+  right: 0;
+  top: 16px;
+  right: 40px;
+  color: #888;
+}
+
+.user__list-box {
+  margin: 40px 0;
+}
+
+.user__list-box .user__list-info {
+  margin: 0;
+  padding: 10px 40px;
+}
+
+.user__list-box .user__list-info .user__list-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 4px;
+}
+
+.user__list-box .user__list-info .user-menu__item-text {
+  line-height: 60px;
   font-size: 24px;
+}
+
+.user__list-box .user__list-info .user-menu__item-icon {
+  top: -16px;
+  font-size: 30px;
 }

@@ -1,0 +1,44 @@
+.tabs__box {
+  display: flex;
+  justify-items: center;
+  background: #fff;
+}
+
+.tabs__item {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  position: relative;
+}
+
+.tabs__item.selected {
+  color: #11cd6e
+}
+
+.tabs__item .tabs__item-bottom {
+  display: none;
+}
+
+.tabs__item.selected .tabs__item-bottom {
+  display: block;
+  width: 80px;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: #11cd6e;
+}
+
+.tabs__item .tabs__item-right {
+  display: block;
+  width: 5px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #f2f2f2;
+}
