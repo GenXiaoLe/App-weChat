@@ -1,0 +1,21 @@
+.index {
+  position: relative;
+  height: 100%;
+}
+
+.index__footer {
+  padding: 10px 40px;
+  background: #fff;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer__btn {
+  width: 80px;
+  height: 30px;
+}

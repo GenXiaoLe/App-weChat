@@ -26,27 +26,23 @@ export default class Index extends Component<IProps> {
     }
   }
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
+  tabsClick (tabsIndex: number) {
+    this.setState({
+      tabsIndex
+    })
+  }
 
   render () {
     console.log(this.props)
     const { list, tabsIndex } = this.state
 
-    const childends:[] = this.props.children
+    const childends = this.props.children as []
     return (
       <View className='tabs'>
         <View className='tabs__box'>
         {
           list.map((item:LItem) => {
-            return <View className={item.value === tabsIndex ? 'selected tabs__item' : 'tabs__item'} key={item.value} style={{width: (100 / list.length) + '%'}}>
+            return <View onClick={() => { this.tabsClick(item.value) }} className={item.value === tabsIndex ? 'selected tabs__item' : 'tabs__item'} key={item.value} style={{width: (100 / list.length) + '%'}}>
               <Text>{item.text}</Text>
               <View className="tabs__item-bottom"></View>
               <View className="tabs__item-right"></View>
