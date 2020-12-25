@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView } from '@tarojs/components'
+import { View, Text, ScrollView, Button } from '@tarojs/components'
 import { getWindowHeight } from '../../utils/style'
 import './index.css'
 
@@ -8,6 +8,19 @@ import Tabs from './components/tabs/index'
 import Weight from './weight'
 
 export default class Index extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      btn: [
+        {
+          text: '页面主操作 Normal',
+          size: 'default',
+          type: 'primary'
+        }
+      ]
+    }
+  }
 
   componentWillMount () { }
 
@@ -26,8 +39,10 @@ export default class Index extends Component {
     return (
       <View className='index'>
         <ScrollView
-          style={{ height: '100%' }}>
-          <Tabs 
+          scroll-y={true}
+          style={{ height: 'calc(100% - 45px)' }}>
+          <Tabs
+            isFixed={true}
             list={[
               {
                 text: '按油相重量计算(g)',
@@ -42,18 +57,30 @@ export default class Index extends Component {
             >
             {
               [
-                <Weight key={1} />,
-                <View key={2}>
-                  222
-                </View>
+                <Weight key={1} type={0} />,
+                <Weight key={2} type={1} />
               ]
             }
           </Tabs>
-          <View className="index__footer">
-            <View className="footer__clear footer__btn">清除</View>
-            <View className="footer__submit footer__btn">计算</View>
-          </View>
         </ScrollView>
+        <View className="index__footer">
+          <View className="footer__clear footer__btn">
+            <Button
+            size='mini'
+            type="warn"
+            >
+              清除
+            </Button>
+          </View>
+          <View className="footer__submit footer__btn">
+            <Button 
+            size='mini'
+            type="primary"
+            >
+              计算
+            </Button>
+          </View>
+        </View>
       </View>
     )
   }
