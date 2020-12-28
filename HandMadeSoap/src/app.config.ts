@@ -2,6 +2,7 @@ export default {
   pages: [
     'pages/index/index',
     'pages/user/index',
+    'pages/oilList/index',
   ],
   window: {
     backgroundTextStyle: 'light',

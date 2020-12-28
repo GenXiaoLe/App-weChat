@@ -1,3 +1,7 @@
+.small {
+  font-size: 22px !important;
+}
+
 .weight__item {
   margin: 30px 0;
   background: #fff;
