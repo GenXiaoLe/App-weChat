@@ -1,6 +1,7 @@
+import Taro from '@tarojs/taro'
 import React, { Component } from 'react'
 import { View, Text, ScrollView, Button } from '@tarojs/components'
-import { getWindowHeight } from '../../utils/style'
+// import { getWindowHeight } from '../../utils/style'
 import './index.css'
 
 import Tabs from './components/tabs/index'
@@ -20,6 +21,8 @@ export default class Index extends Component {
         }
       ]
     }
+
+    // this.clear = this.clear.bind(this)
   }
 
   componentWillMount () { }
@@ -31,6 +34,10 @@ export default class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
+
+  clear () {
+    
+  }
 
   render () {
     // console.log(getWindowHeight())
@@ -68,6 +75,7 @@ export default class Index extends Component {
             <Button
             size='mini'
             type="warn"
+            onClick={this.clear}
             >
               清除
             </Button>

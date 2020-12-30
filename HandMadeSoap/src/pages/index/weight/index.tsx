@@ -59,7 +59,7 @@ export default class Index extends Component<IProps, IState> {
 
   addOilHandle () {
     Taro.navigateTo({
-		  url: 'pages/oilList/index'
+		  url: '/pages/oilList/index'
     })
   }
 

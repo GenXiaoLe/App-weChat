@@ -7,7 +7,9 @@ import Menu from './menu'
 
 export default class User extends Component {
 
-  componentWillMount () { }
+  componentWillMount () { 
+    console.log(223232)
+  }
 
   componentDidMount () { }
 
