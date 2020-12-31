@@ -8,7 +8,20 @@ import Tabs from './components/tabs/index'
 
 import Weight from './weight'
 
-export default class Index extends Component {
+interface IBtn {
+  text: string,
+  size: string,
+  type: string
+}
+
+interface IProps {}
+
+interface IState {
+  holder: any[],
+  btn: IBtn[]
+}
+
+export default class Index extends Component<IProps, IState> {
   constructor(props) {
     super(props);
 
@@ -19,7 +32,8 @@ export default class Index extends Component {
           size: 'default',
           type: 'primary'
         }
-      ]
+      ],
+      holder: []
     }
 
     // this.clear = this.clear.bind(this)
@@ -31,7 +45,15 @@ export default class Index extends Component {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () {
+    const { holder } = this.state
+    let pages = Taro.getCurrentPages();
+    let currPage = pages[pages.length - 1]; // 获取当前页面
+    if (currPage.__data__.holder) { // 获取值
+      holder.push(currPage.__data__.holder)
+      this.setState({ holder })
+    } 
+  }
 
   componentDidHide () { }
 
@@ -43,6 +65,8 @@ export default class Index extends Component {
     // console.log(getWindowHeight())
 
     // const height = getWindowHeight() || '100%'
+
+    const { holder } = this.state
     return (
       <View className='index'>
         <ScrollView
@@ -64,8 +88,8 @@ export default class Index extends Component {
             >
             {
               [
-                <Weight key={1} type={0} />,
-                <Weight key={2} type={1} />
+                <Weight holder={holder} key={1} type={0} />,
+                <Weight holder={holder} key={2} type={1} />
               ]
             }
           </Tabs>

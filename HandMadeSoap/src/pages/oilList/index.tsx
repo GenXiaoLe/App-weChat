@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import { AtIndexes, AtSearchBar } from 'taro-ui'
+import Taro from '@tarojs/taro'
 import './index.css'
 
 interface IProps {
@@ -21,6 +22,7 @@ export default class Oil extends Component<IProps, IState> {
 
     this.searchClickHandle = this.searchClickHandle.bind(this)
     this.searchOnChagneHandle = this.searchOnChagneHandle.bind(this)
+    this.indexClickHandle = this.indexClickHandle.bind(this)
   }
   componentWillMount () { }
 
@@ -32,8 +34,15 @@ export default class Oil extends Component<IProps, IState> {
 
   componentDidHide () { }
 
-  onClick (item) {
-    console.log(item)
+  indexClickHandle (item) {
+    let pages = Taro.getCurrentPages() // 获取当前的页面栈 
+    let prevPage = pages[pages.length - 2] //  获取上一页面
+    prevPage.setData({ //设置上一个页面的值
+      holder: item
+    })
+    Taro.navigateBack({
+      delta: 1
+    })
   }
 
   searchOnChagneHandle (val: string) {
@@ -53,13 +62,15 @@ export default class Oil extends Component<IProps, IState> {
       items: [
         {
           name: '澳洲胡桃油 | 夏威夷坚果油 \n皂化价: 0.139    ins: 119',
-          tag: 0.139,
+          text: '澳洲胡桃油 | 夏威夷坚果油',
+          percent: '0.139',
           no: 119,
           id: 'A-1'
         },
         {
           name: '阿甘油(摩洛哥坚果油) \n 皂化价: 0.136    ins: 97',
-          tag: 0.136,
+          text: '阿甘油(摩洛哥坚果油)',
+          percent: '0.136',
           no: 97,
           id: 'A-2'
         }]
@@ -81,9 +92,11 @@ export default class Oil extends Component<IProps, IState> {
     return (
       <View className='oil'>
         <AtIndexes
+          isVibrate={false}
           className="index-list"
           list={list}
-          onClick={this.onClick.bind(this)}
+          topKey="索引"
+          onClick={this.indexClickHandle}
         >
           <View>
             <AtSearchBar

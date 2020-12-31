@@ -4,7 +4,8 @@ import { View, Text, Image, Checkbox, Input, Textarea, CheckboxGroup } from '@ta
 import './index.css'
 
 interface IProps {
-  type: number
+  type: number,
+  holder: any[]
 }
 
 interface IState {
@@ -12,7 +13,7 @@ interface IState {
   fatList: FatInter[],
   isCountSolidSopa: boolean,
   isCountLiquidSopa: boolean,
-  OilList: OilInter[]
+  OilList: OilInter[],
 }
 
 interface FatInter {
@@ -21,9 +22,12 @@ interface FatInter {
 }
 
 interface OilInter {
-  name: string,
-  percent: string,
-  wieght: string
+  name?: string,
+  percent?: string,
+  wieght?: string,
+  no?: number,
+  id?: string,
+  text?: string,
 }
 
 
@@ -31,14 +35,14 @@ export default class Index extends Component<IProps, IState> {
   constructor(props) {
     super(props)
 
-    const { type } = props
+    const { type, holder = [] } = props
 
     this.state = {
       type,
       fatList: [],
       isCountSolidSopa: false,
       isCountLiquidSopa: false,
-      OilList: []
+      OilList: holder
     }
 
     this.fatListAddHandle = this.fatListAddHandle.bind(this)
@@ -53,7 +57,9 @@ export default class Index extends Component<IProps, IState> {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () { 
+    
+  }
 
   componentDidHide () { }
 
@@ -142,7 +148,7 @@ export default class Index extends Component<IProps, IState> {
                   <View className="weight__item--content-left" style="width: 70%">
                     <Image className="weight__item--content-icon" src={require('./assets/delete-icon.png')}></Image>
                     <View style="margin-left: 10px;">
-                      <Text className="weight__item--header-text">{item.name}</Text>
+                      <Text className="weight__item--header-text">{item.text}</Text>
                       <View style="line-height: 10px;">
                         <Text className="weight__item--header-text small">皂化价：{item.percent}</Text>
                       </View>
