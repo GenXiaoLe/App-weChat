@@ -65,14 +65,14 @@ export default class Oil extends Component<IProps, IState> {
           text: '澳洲胡桃油 | 夏威夷坚果油',
           percent: '0.139',
           no: 119,
-          id: 'A-1'
+          id: '1'
         },
         {
           name: '阿甘油(摩洛哥坚果油) \n 皂化价: 0.136    ins: 97',
           text: '阿甘油(摩洛哥坚果油)',
           percent: '0.136',
           no: 97,
-          id: 'A-2'
+          id: '2'
         }]
       },
       {
