@@ -35,6 +35,7 @@ export default class Oil extends Component<IProps, IState> {
   componentDidHide () { }
 
   indexClickHandle (item) {
+    console.log(item)
     let pages = Taro.getCurrentPages() // 获取当前的页面栈 
     let prevPage = pages[pages.length - 2] //  获取上一页面
     prevPage.setData({ //设置上一个页面的值
@@ -80,10 +81,25 @@ export default class Oil extends Component<IProps, IState> {
         key: 'B',
         items: [
           {
-            'name': '北京'
+            name: '白油(动物) \n 皂化价: 0.136    ins: 115',
+            text: '白油(动物)',
+            percent: '0.136',
+            no: 115,
+            id: '3'
           },
           {
-            'name': '保定'
+            name: '白芒花籽油 \n 皂化价: 0.12    ins: 77',
+            text: '白芒花籽油',
+            percent: '0.12',
+            no: 77,
+            id: '4'
+          },
+          {
+            name: '蓖麻油 \n 皂化价: 0.1286    ins: 95',
+            text: '蓖麻油',
+            percent: '0.1286',
+            no: 95,
+            id: '5'
           }]
       }
     ]
