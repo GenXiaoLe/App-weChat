@@ -101,6 +101,44 @@ export default class Oil extends Component<IProps, IState> {
             no: 95,
             id: '5'
           }]
+      },
+      {
+        title: 'C',
+        key: 'C',
+        items: [
+          {
+            name: '菜籽油 \n 皂化价: 0.124    ins: 56',
+            text: '菜籽油',
+            percent: '0.124',
+            no: 56,
+            id: '6'
+          }]
+      },
+      {
+        title: 'D',
+        key: 'D',
+        items: [
+          {
+            name: '大豆油 \n 皂化价: 0.137    ins: 61',
+            text: '大豆油',
+            percent: '0.137',
+            no: 61,
+            id: '7'
+          },
+          {
+            name: '大麻籽油 \n 皂化价: 0.137    ins: 39',
+            text: '白芒花籽油',
+            percent: '0.137',
+            no: 39,
+            id: '8'
+          },
+          {
+            name: '大麻籽脂 \n 皂化价: 0.136    ins: 115',
+            text: '大麻籽脂',
+            percent: '0.136',
+            no: 115,
+            id: '9'
+          }]
       }
     ]
 
